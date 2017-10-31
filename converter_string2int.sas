@@ -10,12 +10,12 @@ run;
 
 /*
   Exemplo Prático - CPF_CNPJ String to Number
-  outobs=10 serve para exportar apenas 10 Observações(linhas) para ajudar em um cenários de teste
+  obs=10 serve para exportar apenas 10 Observações(linhas) para ajudar em um cenários de teste
   após testar, apenas retirar para rodar a base completa
 */
-data WORK.REL_ATENDIMENTO_NUMERO (OBS=10);
-  SET DWVOIPSP.REL_ATENDIMENTO_SR_F8060216;
-  NEW = put(NUM_CPF_CNPJ_CLIENTE,BEST14.);
+data WORK.REL_ATENDIMENTO_NUMERO ;
+  SET DWVOIPSP.REL_ATENDIMENTO_SR_F8060216 (OBS=10);
+  NEW = put(NUM_CPF_CNPJ_CLIENTE, 8.);
   drop NUM_CPF_CNPJ_CLIENTE;
   rename NEW=NUM_CPF_CNPJ_CLIENTE;
 run;
