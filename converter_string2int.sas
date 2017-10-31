@@ -20,7 +20,10 @@ data WORK.REL_ATENDIMENTO_NUMERO ;
   rename NEW=NUM_CPF_CNPJ_CLIENTE;
 run;
 
-/* Outra maneira seria deixar os 2 campos */
+/* 
+  Outra maneira seria deixar os 2 campos apenas para verificações 
+  antes de tirar o (OBS=10) e rodar tudo
+*/
 data WORK.REL_ATENDIMENTO_NUMERO ;
   SET DWVOIPSP.REL_ATENDIMENTO_SR_F8060216 (OBS=10);
   documento = put(NUM_CPF_CNPJ_CLIENTE, 8.);
