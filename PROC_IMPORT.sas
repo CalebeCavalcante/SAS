@@ -26,7 +26,7 @@ RUN;
 *  IMPORTAR DADOS
 */
 proc import out= WORK.PESQUISA_2
-    datafile = '/saswork/F8060216/pesquisa_jul17ago17_latlong.xlsx'
+    datafile = '/saswork/pesquisa_jul17ago17_latlong.xlsx'
     dbms = xlsx replace;
     sheet = 'base';
     getnames = yes;
